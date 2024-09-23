@@ -32,11 +32,6 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.doctor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.certificate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -49,11 +44,16 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.doctor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.certificate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -120,43 +120,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1037, 469);
             this.dataGridView1.TabIndex = 0;
             // 
-            // doctor_id
-            // 
-            this.doctor_id.DataPropertyName = "doctor_id";
-            this.doctor_id.HeaderText = "Id";
-            this.doctor_id.MinimumWidth = 6;
-            this.doctor_id.Name = "doctor_id";
-            // 
-            // fio
-            // 
-            this.fio.DataPropertyName = "fio";
-            this.fio.HeaderText = "ФИО";
-            this.fio.MinimumWidth = 6;
-            this.fio.Name = "fio";
-            // 
-            // certificate
-            // 
-            this.certificate.DataPropertyName = "certificate";
-            this.certificate.HeaderText = "Сертификат";
-            this.certificate.MinimumWidth = 6;
-            this.certificate.Name = "certificate";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "specialization_id";
-            this.id.HeaderText = "Специализация";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // category_id
-            // 
-            this.category_id.DataPropertyName = "category_id";
-            this.category_id.HeaderText = "Категория";
-            this.category_id.MinimumWidth = 6;
-            this.category_id.Name = "category_id";
-            this.category_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button2);
@@ -171,10 +134,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 9);
+            this.button2.Location = new System.Drawing.Point(8, 7);
             this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
+            this.button2.Size = new System.Drawing.Size(217, 28);
             this.button2.TabIndex = 1;
             this.button2.Text = "Сохранить";
             this.button2.UseVisualStyleBackColor = true;
@@ -295,6 +258,18 @@
             this.tabPage4.Text = "Отчет2";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBox1.Location = new System.Drawing.Point(0, 3);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(999, 31);
+            this.textBox1.TabIndex = 8;
+            this.textBox1.Text = "Вывести пациентов определенного пола с определенной датой рождения";
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -312,12 +287,13 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 2;
+            this.dateTimePicker1.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(237, 55);
+            this.button3.Location = new System.Drawing.Point(237, 53);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(77, 22);
             this.button3.TabIndex = 1;
             this.button3.Text = "Найти";
             this.button3.UseVisualStyleBackColor = true;
@@ -333,17 +309,43 @@
             this.dataGridView4.Size = new System.Drawing.Size(1052, 546);
             this.dataGridView4.TabIndex = 0;
             // 
-            // textBox1
+            // doctor_id
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(0, 3);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(999, 31);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Вывести пациентов определенного пола с определенной датой рождения";
+            this.doctor_id.DataPropertyName = "doctor_id";
+            this.doctor_id.HeaderText = "Id";
+            this.doctor_id.MinimumWidth = 6;
+            this.doctor_id.Name = "doctor_id";
+            // 
+            // fio
+            // 
+            this.fio.DataPropertyName = "fio";
+            this.fio.HeaderText = "ФИО";
+            this.fio.MinimumWidth = 6;
+            this.fio.Name = "fio";
+            // 
+            // certificate
+            // 
+            this.certificate.DataPropertyName = "certificate";
+            this.certificate.HeaderText = "Сертификат";
+            this.certificate.MinimumWidth = 6;
+            this.certificate.Name = "certificate";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "specialization_id";
+            this.id.HeaderText = "Специализация";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // category_id
+            // 
+            this.category_id.DataPropertyName = "category_id";
+            this.category_id.HeaderText = "Категория";
+            this.category_id.MinimumWidth = 6;
+            this.category_id.Name = "category_id";
+            this.category_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Form1
             // 
@@ -390,12 +392,12 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn doctor_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
         private System.Windows.Forms.DataGridViewTextBoxColumn certificate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewComboBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn category_id;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

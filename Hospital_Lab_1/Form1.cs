@@ -45,20 +45,20 @@ namespace Hospital_Lab_1
             //visitAdapter.Fill(dataSet, "Visit");
 
             dataGridView1.DataSource = dataSet.Tables["Doctor"];
-            dataGridView2.DataSource = dataSet.Tables["Patient"];
+            dataGridView2.DataSource = dataSet.Tables["Specialization"];
 
-            //FillManufacturerCombobox();
+            FillManufacturerCombobox();
         }
 
-        //private void FillManufacturerCombobox()
-        //{
-        //    ((DataGridViewComboBoxColumn)dataGridView1.Columns["Специализация"]).DataSource =
-        //        dataSet.Tables["Specialization"];
-        //    ((DataGridViewComboBoxColumn)dataGridView1.Columns["Специализация"]).DisplayMember =
-        //        "name_of_specialization";
-        //    ((DataGridViewComboBoxColumn)dataGridView1.Columns["Специализация"]).ValueMember =
-        //        "id";
-        //}
+        private void FillManufacturerCombobox()
+        {
+            ((DataGridViewComboBoxColumn)dataGridView1.Columns["id"]).DataSource =
+                dataSet.Tables["Specialization"];
+            ((DataGridViewComboBoxColumn)dataGridView1.Columns["id"]).DisplayMember =
+                "name_of_specialization";
+            ((DataGridViewComboBoxColumn)dataGridView1.Columns["id"]).ValueMember =
+                "id";
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             doctorAdapter.Update(dataSet, "Doctor");
