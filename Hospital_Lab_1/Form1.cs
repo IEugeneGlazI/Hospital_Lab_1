@@ -30,27 +30,24 @@ namespace Hospital_Lab_1
 
             // Создание объектов NpgsqlDataAdapter.
             doctorAdapter = new SqlDataAdapter("Select * from Doctor;", connectionString);
-            patientAdapter = new SqlDataAdapter("Select * from Patient;", connectionString);
             specAdapter = new SqlDataAdapter("Select * from Specialization", connectionString);
 
             // Автоматическая генерация команд SQL.
             doctorBuilder = new SqlCommandBuilder(doctorAdapter);
-            patientBuilder = new SqlCommandBuilder(patientAdapter);
             specBuilder = new SqlCommandBuilder(specAdapter);
 
             // Заполнение таблиц в DataSet.
             doctorAdapter.Fill(dataSet, "Doctor");
-            patientAdapter.Fill(dataSet, "Patient");
             specAdapter.Fill(dataSet, "Specialization");
             //visitAdapter.Fill(dataSet, "Visit");
 
             dataGridView1.DataSource = dataSet.Tables["Doctor"];
             dataGridView2.DataSource = dataSet.Tables["Specialization"];
 
-            FillManufacturerCombobox();
+            FillSpecCombobox();
         }
 
-        private void FillManufacturerCombobox()
+        private void FillSpecCombobox()
         {
             ((DataGridViewComboBoxColumn)dataGridView1.Columns["id"]).DataSource =
                 dataSet.Tables["Specialization"];
@@ -66,7 +63,7 @@ namespace Hospital_Lab_1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            patientAdapter.Update(dataSet, "Patient");
+            specAdapter.Update(dataSet, "Specialization");
         }
 
         private void button4_Click(object sender, EventArgs e)

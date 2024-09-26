@@ -54,6 +54,8 @@
             this.certificate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Specialization = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -129,7 +131,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1044, 517);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Пациенты";
+            this.tabPage2.Text = "Специализации";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -147,6 +149,9 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idd,
+            this.Specialization});
             this.dataGridView2.Location = new System.Drawing.Point(0, 44);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
@@ -221,12 +226,13 @@
             // 
             // textBox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox2.Location = new System.Drawing.Point(3, 3);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(999, 31);
             this.textBox2.TabIndex = 7;
             this.textBox2.Text = "Вывести наименование диагноза и количество  пациентов с данным диагнозом в промеж" +
@@ -239,6 +245,7 @@
             this.dataGridView3.Location = new System.Drawing.Point(0, 123);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(1037, 435);
@@ -260,12 +267,13 @@
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox1.BackColor = System.Drawing.SystemColors.Window;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBox1.Location = new System.Drawing.Point(0, 3);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(999, 31);
             this.textBox1.TabIndex = 8;
             this.textBox1.Text = "Вывести пациентов определенного пола с определенной датой рождения";
@@ -283,7 +291,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(9, 53);
+            this.dateTimePicker1.Location = new System.Drawing.Point(9, 49);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 2;
@@ -291,9 +299,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(237, 53);
+            this.button3.Location = new System.Drawing.Point(238, 60);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(77, 22);
+            this.button3.Size = new System.Drawing.Size(179, 34);
             this.button3.TabIndex = 1;
             this.button3.Text = "Найти";
             this.button3.UseVisualStyleBackColor = true;
@@ -301,9 +309,11 @@
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Location = new System.Drawing.Point(0, 123);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
             this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.RowTemplate.Height = 24;
             this.dataGridView4.Size = new System.Drawing.Size(1052, 546);
@@ -315,6 +325,7 @@
             this.doctor_id.HeaderText = "Id";
             this.doctor_id.MinimumWidth = 6;
             this.doctor_id.Name = "doctor_id";
+            this.doctor_id.ReadOnly = true;
             // 
             // fio
             // 
@@ -346,6 +357,21 @@
             this.category_id.MinimumWidth = 6;
             this.category_id.Name = "category_id";
             this.category_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // idd
+            // 
+            this.idd.DataPropertyName = "id";
+            this.idd.HeaderText = "Id";
+            this.idd.MinimumWidth = 6;
+            this.idd.Name = "idd";
+            this.idd.ReadOnly = true;
+            // 
+            // Specialization
+            // 
+            this.Specialization.DataPropertyName = "name_of_specialization";
+            this.Specialization.HeaderText = "Специализация";
+            this.Specialization.MinimumWidth = 6;
+            this.Specialization.Name = "Specialization";
             // 
             // Form1
             // 
@@ -398,6 +424,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn certificate;
         private System.Windows.Forms.DataGridViewComboBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn category_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Specialization;
     }
 }
 
