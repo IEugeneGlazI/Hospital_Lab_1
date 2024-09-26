@@ -17,7 +17,6 @@ namespace Hospital_Lab_1
         private SqlDataAdapter doctorAdapter;
         private SqlDataAdapter specAdapter;
         private SqlDataAdapter catAdapter;
-        //private SqlDataAdapter visitAdapter;
         private SqlCommandBuilder doctorBuilder = new SqlCommandBuilder();
         private SqlCommandBuilder specBuilder = new SqlCommandBuilder();
         private SqlCommandBuilder catBuilder = new SqlCommandBuilder();
