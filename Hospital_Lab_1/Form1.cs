@@ -15,12 +15,12 @@ namespace Hospital_Lab_1
     {
         private string connectionString;
         private SqlDataAdapter doctorAdapter;
-        private SqlDataAdapter patientAdapter;
         private SqlDataAdapter specAdapter;
+        private SqlDataAdapter catAdapter;
         //private SqlDataAdapter visitAdapter;
         private SqlCommandBuilder doctorBuilder = new SqlCommandBuilder();
-        private SqlCommandBuilder patientBuilder = new SqlCommandBuilder();
         private SqlCommandBuilder specBuilder = new SqlCommandBuilder();
+        private SqlCommandBuilder catBuilder = new SqlCommandBuilder();
         private DataSet dataSet = new DataSet();
 
         public Form1()
@@ -31,15 +31,18 @@ namespace Hospital_Lab_1
             // Создание объектов NpgsqlDataAdapter.
             doctorAdapter = new SqlDataAdapter("Select * from Doctor;", connectionString);
             specAdapter = new SqlDataAdapter("Select * from Specialization", connectionString);
+            catAdapter = new SqlDataAdapter("Select * from Category", connectionString);
 
             // Автоматическая генерация команд SQL.
             doctorBuilder = new SqlCommandBuilder(doctorAdapter);
             specBuilder = new SqlCommandBuilder(specAdapter);
+            catBuilder = new SqlCommandBuilder(catAdapter);
 
             // Заполнение таблиц в DataSet.
             doctorAdapter.Fill(dataSet, "Doctor");
             specAdapter.Fill(dataSet, "Specialization");
-            //visitAdapter.Fill(dataSet, "Visit");
+            catAdapter.Fill(dataSet, "Category");
+
 
             dataGridView1.DataSource = dataSet.Tables["Doctor"];
             dataGridView2.DataSource = dataSet.Tables["Specialization"];
@@ -55,7 +58,14 @@ namespace Hospital_Lab_1
                 "name_of_specialization";
             ((DataGridViewComboBoxColumn)dataGridView1.Columns["id"]).ValueMember =
                 "id";
+            ((DataGridViewComboBoxColumn)dataGridView1.Columns["category_id"]).DataSource =
+               dataSet.Tables["Category"];
+            ((DataGridViewComboBoxColumn)dataGridView1.Columns["category_id"]).DisplayMember =
+                "type_of_category";
+            ((DataGridViewComboBoxColumn)dataGridView1.Columns["category_id"]).ValueMember =
+                "cat_id";
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             doctorAdapter.Update(dataSet, "Doctor");

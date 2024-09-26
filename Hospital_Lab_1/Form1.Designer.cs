@@ -35,6 +35,8 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Specialization = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.textBoxEndDate = new System.Windows.Forms.MaskedTextBox();
@@ -53,9 +55,7 @@
             this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.certificate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.category_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Specialization = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category_id = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -159,6 +159,21 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(1037, 514);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // idd
+            // 
+            this.idd.DataPropertyName = "id";
+            this.idd.HeaderText = "Id";
+            this.idd.MinimumWidth = 6;
+            this.idd.Name = "idd";
+            this.idd.ReadOnly = true;
+            // 
+            // Specialization
+            // 
+            this.Specialization.DataPropertyName = "name_of_specialization";
+            this.Specialization.HeaderText = "Специализация";
+            this.Specialization.MinimumWidth = 6;
+            this.Specialization.Name = "Specialization";
             // 
             // tabPage3
             // 
@@ -357,21 +372,7 @@
             this.category_id.MinimumWidth = 6;
             this.category_id.Name = "category_id";
             this.category_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // idd
-            // 
-            this.idd.DataPropertyName = "id";
-            this.idd.HeaderText = "Id";
-            this.idd.MinimumWidth = 6;
-            this.idd.Name = "idd";
-            this.idd.ReadOnly = true;
-            // 
-            // Specialization
-            // 
-            this.Specialization.DataPropertyName = "name_of_specialization";
-            this.Specialization.HeaderText = "Специализация";
-            this.Specialization.MinimumWidth = 6;
-            this.Specialization.Name = "Specialization";
+            this.category_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Form1
             // 
@@ -419,13 +420,13 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Specialization;
         private System.Windows.Forms.DataGridViewTextBoxColumn doctor_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
         private System.Windows.Forms.DataGridViewTextBoxColumn certificate;
         private System.Windows.Forms.DataGridViewComboBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn category_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Specialization;
+        private System.Windows.Forms.DataGridViewComboBoxColumn category_id;
     }
 }
 
